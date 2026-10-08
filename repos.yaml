@@ -1,0 +1,126 @@
+# KubeRocketCI workspace manifest — single source of truth for the repo set.
+#
+# Each entry:
+#   dir  : local directory name inside the workspace (and what you cd into)
+#   url  : git clone URL
+#   group: logical grouping (platform | devops | docs)
+#   desc : one-line description
+#
+# Consumed by bootstrap.sh (clone-or-skip) and the krci-help
+# /bootstrap-workspace command. Add a repo here and both pick it up.
+repos:
+#### TOOLS
+  - dir: github/tools/try-krci
+    url: git@github.com:KubeRocketCI/try-kuberocketci.git
+    group: devops
+    desc: "Try KubeRocketCI — playground for testing the platform"
+  - dir: github/cli
+    url: git@github.com:KubeRocketCI/cli.git
+    group: platform
+    desc: "krci CLI — Cobra, talks to portal API (Go)"
+  - dir: github/tools/claude-code-telemetry
+    url: git@github.com:KubeRocketCI/claude-code-telemetry.git
+    group: devops
+    desc: "Claude Code usage telemetry — OTel Collector + Prometheus + Loki + Grafana"
+
+#### GITLAB
+  - dir: gitlab/autotests
+    url: git@git.epam.com:epmd-edp/core/autotests.git
+    group: gitlab
+    desc: "Try KubeRocketCI — playground for testing the platform"
+
+  - dir: gitlab/edp-delivery-custom-pipelines
+    url: git@git.epam.com:epmd-edp/core/edp-delivery-custom-pipelines.git
+    group: gitlab
+    desc: "EDP Delivery Custom Pipelines — custom Tekton pipelines for EDP projects"
+
+  - dir: gitlab/edp-delivery-gitops
+    url: git@git.epam.com:epmd-edp/core/edp-delivery-gitops.git
+    group: gitlab
+    desc: "EDP Delivery GitOps — GitOps setup for EDP projects"
+
+  - dir: gitlab/edp4edp-cluster-add-ons
+    url: git@git.epam.com:epmd-edp/core/edp4edp-cluster-add-ons.git
+    group: gitlab
+    desc: "EDP4EDP Cluster Add-Ons — Argo CD App-of-Apps add-on catalog (Helm/YAML)"
+
+  - dir: gitlab/platform-epmd-edp
+    url: git@git.epam.com:epmd-edp/core/platform-epmd-edp.git
+    group: gitlab
+    desc: "Platform EPMD EDP — core platform repository"
+
+  - dir: gitlab/platform-epmd-sandbox
+    url: git@git.epam.com:epmd-edp/core/platform-epmd-sandbox.git
+    group: gitlab
+    desc: "Platform EPMD Sandbox — core platform repository"
+
+
+#### GITHUB
+  - dir: github/BASE/krci-portal
+    url: git@github.com:KubeRocketCI/krci-portal.git
+    group: platform
+    desc: "Portal — React 19 + tRPC + Fastify monorepo (TypeScript)"
+  - dir: github/BASE/edp-tekton
+    url: git@github.com:epam/edp-tekton.git
+    group: devops
+    desc: "Tekton ClusterInterceptor + pipelines-library (Go + Helm)"
+  - dir: github/BASE/tekton-custom-task
+    url: git@github.com:KubeRocketCI/tekton-custom-task.git
+    group: platform
+    desc: "ApprovalTask CRD / custom Tekton tasks operator (Go)"
+  - dir: github/BASE/tekton-pipeline-queue
+    url: git@github.com:KubeRocketCI/tekton-pipeline-queue.git
+    group: platform
+    desc: "PipelineRunQueue CRD — per-lane Tekton PipelineRun concurrency operator (Go)"
+  - dir: github/BASE/krci-cache
+    url: git@github.com:KubeRocketCI/krci-cache.git
+    group: platform
+    desc: "Pipeline artifact cache — Echo HTTP server (Go)"
+  - dir: github/BASE/edp-codebase-operator
+    url: git@github.com:epam/edp-codebase-operator.git
+    group: platform
+    desc: "Codebase/CodebaseBranch/GitServer CRDs operator (Go)"
+  - dir: github/BASE/edp-cd-pipeline-operator
+    url: git@github.com:epam/edp-cd-pipeline-operator.git
+    group: platform
+    desc: "CDPipeline/Stage promotion operator (Go)"
+  - dir: github/BASE/edp-keycloak-operator
+    url: git@github.com:epam/edp-keycloak-operator.git
+    group: platform
+    desc: "Declarative Keycloak config operator (Go)"
+  - dir: github/BASE/edp-nexus-operator
+    url: git@github.com:epam/edp-nexus-operator.git
+    group: platform
+    desc: "Declarative Nexus config operator (Go)"
+  - dir: github/BASE/edp-sonar-operator
+    url: git@github.com:epam/edp-sonar-operator.git
+    group: platform
+    desc: "Declarative SonarQube config operator (Go)"
+  - dir: github/BASE/gitfusion
+    url: git@github.com:KubeRocketCI/gitfusion.git
+    group: platform
+    desc: "Unified Git provider adapter — Echo, OpenAPI (Go)"
+  - dir: github/BASE/edp-cluster-add-ons
+    url: git@github.com:epam/edp-cluster-add-ons.git
+    group: devops
+    desc: "Argo CD App-of-Apps add-on catalog (Helm/YAML)"
+  - dir: github/BASE/edp-install
+    url: git@github.com:epam/edp-install.git
+    group: devops
+    desc: "Umbrella platform installation chart (Helm)"
+  - dir: github/docs/krci-docs
+    url: git@github.com:KubeRocketCI/docs.git
+    group: docs
+    desc: "Documentation site docs.kuberocketci.io (Docusaurus)"
+  - dir: github/BASE/krci-autotests
+    url: git@github.com:KubeRocketCI/krci-autotests.git
+    group: platform
+    desc: "Automated tests for KubeRocketCI platform"
+
+
+
+
+
+
+
+
